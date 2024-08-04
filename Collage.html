@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collage de Fotos</title>
+    <style>
+     body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+}
+
+.collage-container {
+    position: relative;
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    background: linear-gradient(145deg, #1e1e1e, #2c2c2c);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.collage {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.collage img {
+    width: calc(33.333% - 10px);
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.collage img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.luxury-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: -50px; /* Half of the button's height */
+    margin-left: -50px; /* Half of the button's width */
+}
+
+.luxury-button img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.luxury-button .logo-rojo {
+    opacity: 1;
+}
+
+.luxury-button:hover .logo-rojo {
+    opacity: 0;
+    transform: scale(1.2);
+}
+
+.luxury-button .logo-oscuro {
+    opacity: 0;
+}
+
+.luxury-button:hover .logo-oscuro {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.luxury-button:hover {
+    transform: scale(1.1);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: scale(0.8);
+    opacity: 0;
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+}
+.titulo-catalogo {
+  display: flex;
+  flex-direction: column; /* Organiza los elementos en una columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+  
+  color: #fff; /* Texto blanco */
+  padding: 20px;
+}
+
+.titulo-catalogo img {
+  width: 80px; /* Tamaño más pequeño para el logo */
+  height: auto; /* Mantiene la proporción del logo */
+  margin-bottom: 10px; /* Espacio entre el logo y el texto */
+  border-radius: 50%; /* Bordes redondeados para el logo */
+}
+
+.titulo-catalogo h1 {
+  font-size: 2rem; /* Tamaño adecuado para el título */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  text-align: center;
+}
+
+/* Footer Styles */
+.footer {
+    width: 100%;
+    background: linear-gradient(145deg, #1e1e1e, #2c2c2c);
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+}
+
+.footer p {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: #333;
+    transition: background 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.footer a:hover {
+    background: #555;
+    transform: scale(1.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .footer a {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+    
+
+    <div class="collage-container">
+        <!-- Título con Logo -->
+<div href="./index.html" class="titulo-catalogo">
+    <a href="./index.html">
+    <img  src="https://i.postimg.cc/cHr4Gmr3/Logo-Do-a-Lucia-rojo.png" alt="Logo Doña Lucía" />
+  </a>
+    <h1>Catálogo  <b>Doña Lucía</b></h1>
+  </div>
+        <div class="collage">
+            <!-- Añade todas las imágenes aquí -->
+            
+<img src="https://i.postimg.cc/FRPwL3gT/Caramelos.jpg" alt="Caramelos">
+<img src="https://i.postimg.cc/Ls3cmrqK/chicle.jpg" alt="Chicle">
+<img src="https://i.postimg.cc/90rKt0LC/Chicles-de-Bolitas.jpg" alt="Chicles de Bolitas">
+
+
+<img style="display: none;" src="https://i.postimg.cc/bwXWkzkf/Cikilop.jpg" alt="Cikilop">
+<img src="https://i.postimg.cc/P5mcMBQp/Cremas-Pozuelo.jpg" alt="Cremas Pozuelo">
+
+
+<img src="https://i.postimg.cc/gJ0TmrF8/Dulce-de-Mani-Molido.jpg" alt="Dulce de Maní Molido">
+<img src="https://i.postimg.cc/xCFFCYn7/Galletas-Bien.jpg" alt="Galletas Bien">
+<img src="https://i.postimg.cc/MHM3f4GG/Galletas-Biskiato.jpg" alt="Galletas Biskiato">
+<img src="https://i.postimg.cc/gjCSVDwH/Galletas-Brinky.jpg" alt="Galletas Brinky">
+<img src="https://i.postimg.cc/7Y7DptND/Galletas-de-chorizo.jpg" alt="Galletas de chorizo">
+<img src="https://i.postimg.cc/HWrTtkcr/Galletas-de-chorizo-2.jpg" alt="Galletas de chorizo 2">
+<img src="https://i.postimg.cc/FFwNCX3D/Galletas-de-Mantequilla.jpg" alt="Galletas de Mantequilla">
+<img src="https://i.postimg.cc/2SDmmdHW/Galletas-festival.jpg" alt="Galletas festival">
+<img src="https://i.postimg.cc/CKvVj3wC/Galletas-Manchitas.jpg" alt="Galletas Manchitas">
+<img style="display: none;" src="https://i.postimg.cc/VNs80fPL/Panquesitos-Kens.jpg" alt="Panquesitos Kens">
+<img  style="display: none;" src="https://i.postimg.cc/bw9PvGMB/Panquesitos-Kens-2.jpg" alt="Panquesitos Kens 2">
+<img src="https://i.postimg.cc/d1Lcn50b/Paquete-de-Galletas-Grandes.jpg" alt="Paquete de Galletas Grandes">
+<img style="display: none;" src="https://i.postimg.cc/rm3XH50K/Pasteles-Black-and-White.jpg" alt="Pasteles Black and White">
+<img style="display: none;" src="https://i.postimg.cc/T1bMvhgQ/Pastella.jpg" alt="Pastella">
+<img src="https://i.postimg.cc/9Xwj7gKT/Pelli-Marranetas.jpg" alt="Pelli Marranetas">
+<img src="https://i.postimg.cc/pXNMYYMS/Pellis-Tox.jpg" alt="Pellis Tox">
+<img src="https://i.postimg.cc/ncvbdjHh/Refresco-de-Cola.jpg" alt="Refresco de Cola">
+<img src="https://i.postimg.cc/nhp8NFzY/Refresco-de-Naranja.jpg" alt="Refresco de Naranja">
+<img src="https://i.postimg.cc/fRC4NGS4/Refresco-de-Paquetico.jpg" alt="Refresco de Paquetico">
+<img src="https://i.postimg.cc/1z3k5vD8/Refresco-de-Pi-a.jpg" alt="Refresco de Piña">
+<img src="https://i.postimg.cc/HLvfJbtB/Saladitas.jpg" alt="Saladitas">
+
+            <img src="https://i.postimg.cc/GhWxXPbn/21.jpg" alt="Imagen 1">
+            <img src="https://i.postimg.cc/HLH4gpJS/22.jpg" alt="Imagen 2">
+            <img src="https://i.postimg.cc/5t359ZLf/23.jpg" alt="Imagen 3">
+            <img src="https://i.postimg.cc/XJ1wddsh/24.jpg" alt="Imagen 4">
+            <img src="https://i.postimg.cc/YSFYPHN1/Miness.jpg" alt="Imagen 5">
+            <img src="https://i.postimg.cc/4dx6YBQV/26.jpg" alt="Imagen 6">
+            
+            <img src="https://i.postimg.cc/qvrgR1wf/Lechje-Condensada.jpg" alt="Imagen 8">
+
+            <img src="https://i.postimg.cc/wTkgK88t/1510643280-123.jpg" alt="Imagen 9">
+            <img src="https://i.postimg.cc/28TwdrTy/botonetasristra13g.png" alt="Imagen 10">
+            <img src="https://i.postimg.cc/fyzdkSGK/rs-w-1200-h-1200.jpg" alt="Imagen 11">
+            
+           
+               <!-- Footer -->
+<div class="footer">
+    <p>Para cualquier duda, puedes contactarme a través de:</p>
+    <a href="https://wa.me/5355189657" target="_blank" class="contact-button">WhatsApp</a>
+    <a href="tel:+5355189657" class="contact-button">Llamar</a>
+    <a href="sms:+5355189657" class="contact-button">Enviar SMS</a>
+</div>
+        </div>
+        <button class="luxury-button" onclick="window.location.href='./index.html';">
+            <img src="https://i.postimg.cc/cHr4Gmr3/Logo-Do-a-Lucia-rojo.png" alt="Logo Rojo" class="logo-rojo">
+            <img src="https://i.postimg.cc/QM6xzPxs/Logo-Do-a-Lucia-Oscuro.png" alt="Logo Oscuro" class="logo-oscuro">
+        </button>
+        
+    </div>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">×</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+
+    <script>
+     document.addEventListener("DOMContentLoaded", function() {
+    // Obtener el modal
+    var modal = document.getElementById("imageModal");
+
+    // Obtener la imagen y colocarla dentro del modal
+    var modalImg = document.getElementById("modalImage");
+    var images = document.querySelectorAll(".collage img");
+    images.forEach(function(image) {
+        image.addEventListener("click", function() {
+            modal.style.display = "flex";
+            modal.classList.add("show");
+            modalImg.src = this.src;
+        });
+    });
+
+    // Obtener el elemento <span> que cierra el modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // Cuando el usuario hace clic en <span> (x), cerrar el modal
+    span.addEventListener("click", function() {
+        modal.style.display = "none";
+        modal.classList.remove("show");
+    });
+
+    // Asegurarse de que el modal esté oculto al cargar la página
+    modal.style.display = "none";
+    modal.classList.remove("show");
+});
+
+    </script>
+    
+</body>
+</html>
