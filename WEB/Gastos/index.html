@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Gastos</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Gastos</h1>
+        <div id="initial-amount-section">
+            <h2>Monto General: $<span id="initial-amount">1000</span></h2>
+            <h3>Monto Restante: $<span id="remaining-amount">1000</span></h3>
+        </div>
+        <form id="expense-form">
+            <label for="date">Fecha:</label>
+            <input type="date" id="date" required>
+            <label for="amount">Monto:</label>
+            <input type="number" id="amount" required>
+            <label for="description">Descripción:</label> 
+            <input type="text" id="description" required>
+            <button type="submit">Agregar Gasto</button>
+        </form>
+        <h2>Gastos</h2>
+        <ul id="expense-list"></ul>
+        <button id="copy-button">Copiar Datos al Portapapeles</button>
+    </div>
+
+    <!-- Modal for modifying initial amount -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2>Modificar Monto General</h2>
+            <form id="modify-amount-form">
+                <label for="password">Clave (6 números):</label>
+                <input type="password" id="password" maxlength="6" required>
+                <label for="new-amount">Nuevo Monto Inicial:</label>
+                <input type="number" id="new-amount" required>
+                <button type="submit">Modificar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Form for adding additional funds -->
+    <div class="container">
+        <h2>Agregar Efectivo</h2>
+        <form id="add-funds-form">
+            <label for="additional-amount">Monto Adicional:</label>
+            <input type="number" id="additional-amount" required>
+            <button type="submit">Agregar</button>
+        </form>
+        <h3>Historial de Efectivo Agregado</h3>
+        <ul id="added-funds-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

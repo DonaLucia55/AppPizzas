@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Doña Lucia</title>
+
+  
+
+
+    <!-- FUENTE GOOGLE FONTS : Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- ICONS: Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+    <!-- ICONS: Line Awesome -->
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+    <!-- Animaciones AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
+    <!-- Bootstrap 5.3 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+
+
+    <link rel="icon" type="image/png" href="./img/Iconapp.png"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
+    <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+/>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Mis Estilos -->
+    <link rel="stylesheet" href="css/estilos.css">
+   <!-- <link rel="stylesheet" href="css/estilomodal.css">-->
+
+
+ 
+<style>
+.icon-link {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #f5f5f5; 
+    text-align: center;
+    line-height: 40px;
+    color: #333; 
+    text-decoration: none;
+}
+
+.icon-link:hover {
+    background-color: #e0e0e0; 
+}
+
+
+.icon-link {
+  font-family: "bootstrap-icons";
+}
+
+
+
+/* Selecciona la imagen dentro del modal */
+#anuncio-modal img {
+  
+  width: 100%;
+  
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+
+    li {
+  display: inline-block;
+  position: relative;
+  margin: 0 10px;
+}
+
+
+.dropdown-toggle {
+  background-color: #007bff00;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+/* Estilo para el menú desplegable */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  min-width: 200px;
+  z-index: 10;
+}
+
+/* Estilo para los elementos del menú desplegable */
+.dropdown-menu input, .dropdown-menu button {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+/* Estilo para el botón de activar */
+.dropdown-menu button {
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+}
+
+/* Estilo para mostrar el menú desplegable cuando el botón está activo */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+ /*Estilo para ocultar el párrafo con id="visit-count" */
+#visit-count {
+  display: none;
+}
+
+a.icon-link {
+  display: none;
+}
+
+#discountCode {
+    display: none;
+}
+#discount, 
+#picadillo, 
+#Huevos, 
+#Hamburguesas, 
+#Arroz, 
+#Refrescocola, 
+#Malta, 
+#Coprove, 
+#KolaReal, 
+#Chanceller, 
+#Cervezabucanero,
+#Productos-Nacionales,
+#carnelimpia,
+#pizzajamon,
+#telefonomodal,
+#correomodal {
+    display: none;
+}
+
+</style>
+  <meta property="og:title" content="Doña Lucia | Los Mejores Precios">
+  <meta property="og:description" content="Arroz, Frijoles, Carnes, Lácteos y mucho mas...">
+ 
+  <meta property="og:image" content="https://i.postimg.cc/brT2kV2z/Combos-Rincon-de-cuba.jpg">
+  <meta property="og:url" content="https://decubarincon.github.io/tiendaonline">
+
+</head>
+    <body>
+
+    <div class="hm-wrapper">
+
+        <!-- =================================
+           HEADER MENU
+        ================================== -->
+        <div class="hm-header">
+
+            <div class="container">
+                <div class="header-menu">
+        
+                    <div class="hm-logo">
+                        <a href="./index.html">
+                            <img src="https://i.postimg.cc/7hLs4sLW/logo-home-master-store-dona-lucia.png" alt="">
+                        </a>
+                    </div>
+        
+                    <nav class="hm-menu">
+                        <ul>
+                            <!--<li>
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Administración
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <input class="form-control" type="text" id="personalCode" placeholder="Tu código">
+                                      <button class="btn btn-primary" onclick="resetCounter()">Acceder</button>
+                                    </div>
+                                  </div>
+                                </li>-->
+                                <li><div><a href="./noticias.html">Noticias y Ofertas</a></div></li>
+                                <!--<li><div><a href="./listadeproductos.html">Lista de productos</a></div></li>-->
+                            <li><a href="./nosotros.html">Nosotros</a></li>
+                            <li><a href="./contacto.html">Contacto</a></li>
+                            
+                            <!-- Menú desplegable -->
+                            
+                        </ul>
+        
+        
+                        <div class="hm-icon-cart">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                                <i class="las la-shopping-cart"></i>
+                                <span class="badge">0</span>
+                            </a>
+                        </div>
+        
+                        <div class="icon-menu">
+                            <button type="button"><i class="fas fa-bars"></i></button>
+                        </div>
+        
+                    </nav>
+        
+                </div>
+            </div>
+        
+        </div>
+        
+        <!-- =================================
+           HEADER MENU Movil
+        ================================== -->
+        <div class="header-menu-movil">
+            <button class="cerrar-menu"><i class="fas fa-times"></i></button>
+            <ul>
+                <li><a href="./noticias.html">Noticias y Ofertas</a></li>
+                <li><a href="./listadeproductos.html">Lista de productos</a></li>
+                <li><a href="./nosotros.html">Nosotros</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+                <!--<li><button id="reset-button">Reiniciar contador</button></a></li>-->
+                
+                
+           
+            </ul>
+        </div>
+
+       <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">
+            Abrir modal
+          </button> -->  
+          <!-- Modal Anuncio 
+       <div class="modal fade" id="anuncio-modal" tabindex="-1" aria-labelledby="anuncio-modal-label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                  <h5 class="modal-title" id="anuncio-modal-label">¡Bienvenido a nuestra tienda!</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Estamos muy felices de que hayas elegido nuestra tienda para hacer tu primera compra. Queremos agradecerte con un cupón de descuento que puedes usar en tu próximo pedido.</p>
+                  <div class="input-group mb-3">
+                    <input type="text" id="cupon" value="PRIMERACOMPRA" readonly class="form-control">
+                    <button class="btn btn-primary" onclick="var cupon = document.getElementById('cupon'); cupon.select(); document.execCommand('copy');">Usar</button>
+                  </div>
+                  <p>¡No dejes pasar esta oportunidad y disfruta de nuestro catálogo de productos de calidad y buen precio!</p>
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ir a comprar</button>
+                </div>
+              </div>
+            </div>
+          </div>  -->        
+
+
+        <!-- Modal Anuncio -->
+        <!-- <div class="modal fade" id="anuncio-modal" tabindex="-1" aria-labelledby="anuncio-modal-label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                  <h5 class="modal-title" id="anuncio-modal-label">¡Bienvenido a nuestra tienda!</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Estamos muy felices de que hayas elegido nuestra tienda para hacer tu primera compra. Queremos agradecerte con un cupón de descuento que puedes usar en tu próximo pedido.</p>
+                  <div class="input-group mb-3">
+                    <input type="text" id="cupon" value="PRIMERACOMPRA" readonly class="form-control">
+                    <button class="btn btn-primary" onclick="var cupon = document.getElementById('cupon'); cupon.select(); document.execCommand('copy');">Usar</button>
+                  </div>
+                  <p>¡No dejes pasar esta oportunidad y disfruta de nuestro catálogo de productos de calidad y buen precio!</p>
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ir a comprar</button>
+                </div>
+              </div>
+            </div>
+          </div>  -->
+
+          <!-- Modal anuncio imagen -->
+      <!--  <div class="modal fade" id="anuncio-modalimagen" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body"> 
+                        
+                      <img src="https://i.postimg.cc/9fcg5k0v/RUJjf-TLHTMG2l-Ja2y-LPq-w.jpg" class="img-fluid" alt="Descripción de la imagen">
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+      <!--  <div class="modal fade add-to-cart cart" id="productodal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="productModalLabel">Producto: Camiseta de Bing</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-6">
+                      <img src="https://i.postimg.cc/pLKXMKM0/Chuleta-de-cerdo-2.jpg" alt="Chuleta de cerdo" class="img-fluid card-img-top ">
+                    </div>
+                    <div class="col-6">
+                      <p class="lead">Descripción:</p>
+                      <p>Esta camiseta es perfecta para mostrar tu amor por Bing, el mejor buscador del mundo. Está hecha de algodón de alta calidad y tiene el logo de Bing estampado en el pecho. Disponible en varios colores y tallas.</p>
+                      <p class="product-price">Precio: $19.99</p>
+                      <p class="lead">Envío: Gratis</p>
+                      <p class="lead">Valoración: 4.5/5</p>
+                      <button type="button" class="btn btn-primary uppercase add-to-cart" data-bs-dismiss="modal"><i class="bi bi-cart-plus"></i> Agregar al carrito</button>
+                      <a class="hm-btn btn-primary  uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>-->
+
+
+<!-- ModalProduct 1 -->
+<!--<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body product-item card">
+          <div class="row g-0">
+            <div class="col-md-6">
+              <img src="https://i.postimg.cc/HnLVpn9r/Aceite-3.jpg" alt="Aceite" class="img-fluid card-img-top">
+            </div>
+            <div class="col-md-6 d-flex flex-column justify-content-between">
+              <div class="card-body">
+                <h3 class="card-title">Aceite</h3>
+                <p class="card-text">Este aceite es ideal para cocinar tus platos favoritos con un sabor delicioso y una textura suave. Está elaborado con ingredientes naturales y tiene un alto contenido en ácidos grasos esenciales que benefician tu salud.</p>
+                <p class="card-text"><small class="text-muted">1 Litro</small></p>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="precio">
+                    <span class="product-price">$3.50us</span>
+                  </div>
+                  <a class="hm-btn btn-primary  uppercase add-to-cart" data-name="Aceite" data-image="https://i.postimg.cc/HnLVpn9r/Aceite-3.jpg" data-price="3.50">AGREGAR AL CARRITO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>-->
+
+  <!-- ModalProduct 2 -->
+ 
+ 
+    
+  <!-- =================================
+           MODAL DE CARRITO DE COMPRAS
+        ================================== -->
+        <!-- Primer modal: lista del carrito -->
+        <div class="modal fade top-right" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="cartModalLabel">Lista del carrito</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <ul class="cart-list"></ul>
+                  <p class="cart-total">Total: $0.00</p>
+                  <p id="discount">Descuento: $0.00</p>
+                  <!-- Campo de entrada para el cupón de descuento -->
+                  <input type="text" id="discountCode" placeholder="Ingresa tu cupón de descuento">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" id="clearCart">Limpiar carrito</button>
+                  <button type="button" class="btn btn-primary" id="checkoutCart" data-bs-toggle="modal" data-bs-target="#checkoutModal">Finalizar compra</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+  
+
+<!-- Segundo modal: formulario de compra -->
+<!-- Segundo modal: formulario de compra con estilo diferente -->
+<div class="modal fade top-right" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content new-style">
+      <div class="modal-header">
+        <h5 class="modal-title text-danger" id="checkoutModalLabel">Finalizar compra</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="modal-form">
+          <div class="modal-form-group">
+            <label for="name" class="modal-form-label">Nombre</label>
+            <input type="text" id="name" class="modal-form-input form-control" required>
+          </div>
+          <div class="modal-form-group" id="telefonomodal">
+            <label for="phone" class="modal-form-label">Teléfono</label>
+            <input type="tel" id="phone" class="modal-form-input form-control intl-tel-input" required>
+          </div>
+          <div class="modal-form-group" id="correomodal">
+            <label for="email" class="modal-form-label">Correo</label>
+            <input type="email" id="email" class="modal-form-input form-control" >
+          </div>
+          <div class="modal-form-group">
+            <label for="recipient" class="modal-form-label">Nombre de a quien envía</label>
+            <input type="text" id="recipient" class="modal-form-input form-control" required>
+          </div>
+          <div class="modal-form-group">
+            <label for="recipient-phone" class="modal-form-label">Teléfono de a quien envía</label>
+            <input type="tel" id="recipient-phone" class="modal-form-input form-control intl-tel-input" required>
+          </div>
+          <div class="modal-form-group">
+            <label for="street" class="modal-form-label">Nombre de la calle</label>
+            <input type="text" id="street" class="modal-form-input form-control" required>
+          </div>
+          <div class="modal-form-group">
+            <label for="between" class="modal-form-label">Entre calles</label>
+            <input type="text" id="between" class="modal-form-input form-control" required>
+          </div>
+          <div class="modal-form-group">
+            <label for="number" class="modal-form-label">Número de la casa</label>
+            <input type="number" id="number" class="modal-form-input form-control" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-target="#cartModal" data-bs-toggle="modal">Volver al Carrito</button>
+
+        <button class="btn btn-primary" type="submit">Ordenar vía Whatsapp</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!-- =================================
+           BANNER
+        ================================== -->
+        <div class="hm-banner">
+            <div class="img-banner">
+                <img src="https://i.postimg.cc/brZw3YwJ/banner-Dona-Lucia-2.jpg" alt="">
+            </div>
+            <a href="./index.html"></a>
+        </div>
+        <!-- Añade este botón a tu HTML -->
+<!-- <button id="reset-button">Reiniciar contador</button>-->
+
+        <section class="w-75 mx-auto text-center pt-3 my-lg-4" id="Intro">
+            <h1 class="p-3 fs-2 border-top border-3">Elabora con nosotros tus Combos de alimentos para <span class="text-primary"> tus familiares en Cuba.</span></h1>
+            <p>Bienvenido a Rincón de Cuba,<span class="text-primary"> tu destino para los mejores productos y combos de comida elaborados por usted para sus familiares en Cuba. Ofrecemos una selección exclusiva de productos y combos diseñados para satisfacer tus antojos y brindarte una auténtica experiencia. Explora nuestros productos y crea tus combos de comida a tu preferencia para tus familiares en Cuba.</span></p>
+        </section>
+        <h1></h1>
+         <p class="text-center" id="visit-count">¡Bienvenido a nuestra página! Esta es tu primera visita.</p> 
+
+          <div class="modal" id="anuncio-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">¡Gracias por tu segunda visita!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Estamos muy contentos de que hayas vuelto a nuestra tienda. Queremos premiar tu fidelidad con un descuento especial del 10% en tu próxima compra. Solo tienes que introducir el código <strong>SEGUNDAVISITA</strong> al finalizar tu pedido.</p>
+                        <p>¡No dejes pasar esta oportunidad y aprovecha nuestro catálogo de productos de calidad y buen precio!</p>
+                        <img src="./img/anuncio.jpg" alt="Anuncio" class="img-fluid">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Ir a comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      
+    
+        
+        <!-- =================================
+           HOME CATEGROIAS
+        ================================== -->
+      <!--  <div class="hm-page-block">
+            <div class="container">
+                <div class="header-title">
+                    <h1  data-aos="fade-up" data-aos-duration="3000">Categorías</h1>
+                </div>
+
+                <div class="hm-grid-category">
+
+                    <div class="grid-item" data-aos="fade-up" data-aos-duration="1000">
+                        <a href="#">
+                            <img src="img/c-1.jpg" alt="">
+                            <div class="c-info">
+                                <h3>Todo en calzado</h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="grid-item" data-aos="fade-up" data-aos-duration="1500">
+                        <a href="#">
+                            <img src="img/c-2.jpg" alt="">
+                            <div class="c-info">
+                                <h3>Todo a la moda</h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="grid-item" data-aos="fade-up" data-aos-duration="2000">
+                        <a href="#">
+                            <img src="img/c-3.jpg" alt="">
+                            <div class="c-info">
+                                <h3>Lo mejor en tecnología</h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="grid-item" data-aos="fade-up" data-aos-duration="2000">
+                        <a href="#">
+                            <img src="img/c-4.jpg" alt="">
+                            <div class="c-info">
+                                <h3>Accesorios</h3>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div> -->
+
+
+         <!-- =================================
+           HOME PRODUCTOS POPULARES
+        ================================== -->
+        <div class="hm-page-block bg-fondo">
+
+            <div class="container">
+
+                <div class="header-title" data-aos="fade-up">
+                    <h1>Productos populares</h1>
+                </div>
+
+                <!-- TABS -->
+                <ul class="hm-tabs" data-aos="fade-up">
+                    <li class="hm-tab-link">
+                        Alimentos
+                    </li>
+
+                   <li class="hm-tab-link ">
+                    BEBIDAS
+                    </li> 
+
+                    <li class="hm-tab-link " id="Productos-Nacionales">
+                        Productos Nacionales
+                    </li>
+
+                 <!--  <li class="hm-tab-link ative">
+                        ACEO PERSONAL
+                    </li>  -->
+
+                </ul>
+                <div class="modal" tabindex="-1" id="product-modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <img id="product-modal-image" src="" class="img-fluid">
+                            </div>
+                           
+                        </div>
+                    </div>
+                  </div>
+                <!-- CONTENIDO DE LOS TABS -->
+
+                <!-- Alimentos -->
+                <div class="tabs-content" data-aos="fade-up">
+
+                    <div class="grid-product">
+
+                    
+
+                        
+                               
+                        <div class="product-item card" id="Arroz">
+                            <div class="p-portada position-relative">
+                                <a href="#" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/G204BNxg/Arroz-Grano-Largo-El-Pozo-02-87e8bc6c-a40c-4465-a91b-bfdd246f9e1a-1024x1024-2x.webp" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-oferta">5 Libras</span>
+                                <!-- Aquí es donde agregas el icono de compartir -->
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                  </a>
+                                </a>
+                            </div>
+                    
+                            <div class="p-info card-title">
+                               <a href=""> <h3>Arroz</h3></a>
+                                <div class="precio">
+                                    <span class="product-price">$6.00us</span>
+                                </div>
+                                <a class="hm-btn btn-primary  uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+                        </div>
+
+                        <div class="product-item card" id="Espaguetis">
+                            <div class="p-portada position-relative">
+                                <a href="#" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/XNKRWxrB/Spaguettis-Selmi.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-oferta">500g</span>
+                                <!-- Aquí es donde agregas el icono de compartir -->
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                  </a>
+                                </a>
+                            </div>
+                    
+                            <div class="p-info card-title">
+                               <a href=""> <h3>Espaguetis</h3></a>
+                                <div class="precio">
+                                    <span class="product-price">$2.00us</span>
+                                </div>
+                                <a class="hm-btn btn-primary  uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+                        </div>
+                        
+                        <div class="product-item card" id="Queso">
+                            <div class="p-portada position-relative">
+                                <a href="#" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/wxVGLx5M/Queso-Criollo89-Lacteo.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-oferta">5 Libras</span>
+                                <!-- Aquí es donde agregas el icono de compartir -->
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                  </a>
+                                </a>
+                            </div>
+                    
+                            <div class="p-info card-title">
+                               <a href=""> <h3>Queso Blanco</h3></a>
+                                <div class="precio">
+                                    <span class="product-price">$10.00us</span>
+                                </div>
+                                <a class="hm-btn btn-primary  uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+                        </div>
+
+
+                        
+
+                        <div class="product-item card">
+                            <div class="p-portada">
+                                <a href="#" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/ZRHWtppk/Aceite-de-1-L.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-oferta">1 Litro</span>
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+                            <div class="p-info card-title">
+                               <a href=""> <h3>Aceite 1 Litro</h3></a>
+                                <div class="precio">
+                                    <span class="product-price">$5.00us</span>
+                                </div>
+                                <a class="hm-btn btn-primary  uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="product-item card" id="carnelimpia">
+                            <div class="p-portada position-relative">
+                                <a href="#" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/Vv2X5Hvm/603ebddacf623246118940.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-oferta">5 Libras</span>
+                                <!-- Aquí es donde agregas el icono de compartir -->
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+                    
+                            <div class="p-info card-title">
+                               <a href=""> <h3>Carne Limpia de cerdo</h3></a>
+                                <div class="precio">
+                                    <span class="product-price">$15.00us</span>
+                                </div>
+                                <a class="hm-btn btn-primary  uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+                        </div>
+
+                        <div class="product-item card">
+                            <div class="p-portada position-relative">
+                                <a href="#" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/LX5PnTmm/Chicharos45-Alimentos.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-oferta">5 Libras</span>
+                                <!-- Aquí es donde agregas el icono de compartir -->
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+                    
+                            <div class="p-info card-title">
+                               <a href=""> <h3>Chicharo</h3></a>
+                                <div class="precio">
+                                    <span class="product-price">$4.00us</span>
+                                </div>
+                                <a class="hm-btn btn-primary  uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+                        </div>
+                        
+
+                        <div class="product-item card">
+                            <div class="p-portada position-relative">
+                                <a href="#" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/k4wBFtXf/leche-2-Alimento.jpg" class="card-img-top" alt="">
+                                </a>
+                                
+                                <!-- Aquí es donde agregas el icono de compartir -->
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+                    
+                            <div class="p-info card-title">
+                               <a href=""> <h3>Leche Condensada</h3></a>
+                                <div class="precio">
+                                    <span class="product-price">$3.00us</span>
+                                </div>
+                                <a class="hm-btn btn-primary  uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+                        </div>
+                        
+
+                       
+                        <!--<div class="product-item card">
+                            <div class="p-portada position-relative">
+                                <a href="#" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/BZKvny2m/paquete-de-pollo-Carnico-Alimento.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-new">10 Libras</span>
+                                <!-- Aquí es donde agregas el icono de compartir --
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+                    
+                            <div class="p-info card-title">
+                               <a href=""> <h3>Pollo</h3></a>
+                                <div class="precio">
+                                    <span class="product-price">$18.00us</span>
+                                </div>
+                                <a class="hm-btn btn-primary  uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+                        </div>-->
+                       
+                        <div class="product-item card" id="picadillo">
+                            <div class="p-portada position-relative">
+                                <a href="#" class="add-to-modal">
+                                    <img src="./img/Picadillo Mixto Carnico Alimentos.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-new">400g</span>
+                                <!-- Aquí es donde agregas el icono de compartir -->
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+                    
+                            <div class="p-info card-title">
+                               <a href=""> <h3>Picadillo</h3></a>
+                                <div class="precio">
+                                    <span class="product-price">$2.50us</span>
+                                </div>
+                                <a class="hm-btn btn-primary  uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+                        </div>
+
+                        <div class="product-item card" id="Hamburguesas">
+                            <div class="p-portada position-relative">
+                                <a href="#" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/9fY21Whq/hamburguesas1.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-new">10 Unidades</span>
+                                <!-- Aquí es donde agregas el icono de compartir -->
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+                    
+                            <div class="p-info card-title">
+                               <a href=""> <h3>Hamburguesas</h3></a>
+                                <div class="precio">
+                                    <span class="product-price">$4.00us</span>
+                                </div>
+                                <a class="hm-btn btn-primary  uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+                        </div>
+
+                        <div class="product-item card" id="pizzajamon">
+                            <div class="p-portada position-relative">
+                                <a href="#" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/fyNr0CJv/Chorizo-pizza.webp" class="card-img-top" alt="">
+                                </a>
+                           
+                                <!-- Aquí es donde agregas el icono de compartir -->
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+                    
+                            <div class="p-info card-title">
+                                <a href=""> <h3>Pizzas de Jamon y Queso</h3><h3>Calidad Garantizada</h3></a>
+                                <div class="precio">
+                                    <span class="product-price">$1.00us</span>
+                                </div>
+                                <a class="hm-btn btn-primary  uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+                        </div>
+
+                        <div class="product-item card">
+                            <div class="p-portada position-relative">
+                                <a href="#" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/C1XmjN52/Papa-Pizza-Cubana-1440x900-2c68d2995056a36-2c68d3ce-5056-a36a-0bf13765f33f194d.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-new">6 Unidades</span>
+                                <!-- Aquí es donde agregas el icono de compartir -->
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+                    
+                            <div class="p-info card-title">
+                                <a href=""> <h3>Pizzas de Queso</h3><h3>Una unidad 0.50us</h3></a>
+                                <div class="precio">
+                                    <span class="product-price">$3.00us</span>
+                                </div>
+                                <a class="hm-btn btn-primary  uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+                        </div>
+
+                        <div class="product-item card" id="Pizza-Salchichas">
+                            <div class="p-portada position-relative">
+                                <a href="#" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/Bn91rmMZ/Pizza-Salchichas.webp" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-new">5 Unidades</span>
+                                <!-- Aquí es donde agregas el icono de compartir -->
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+                    
+                            <div class="p-info card-title">
+                                <a href=""> <h3>Pizzas de Salchichas</h3><h3>Una unidad 0.80us</h3></a>
+                                <div class="precio">
+                                    <span class="product-price">$4.00us</span>
+                                </div>
+                                <a class="hm-btn btn-primary  uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+                        </div>
+                       
+                        <div class="product-item card">
+                            <div class="p-portada position-relative">
+                                <a href="#" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/MKq8fNCY/salchicas.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-oferta">10 Unidades</span>
+                                <!-- Aquí es donde agregas el icono de compartir -->
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+                    
+                            <div class="p-info card-title">
+                                <a href=""> <h3>Salchichas</h3></a>
+                                <div class="precio">
+                                    <span class="product-price">$3.50us</span>
+                                </div>
+                                <a class="hm-btn btn-primary  uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+                        </div>
+
+                        <div class="product-item card" id="Huevos">
+                            <div class="p-portada position-relative">
+                                <a href="#" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/wvwjbHYg/CAlton-de-huevos.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-oferta">30 Unidades</span>
+                                <!-- Aquí es donde agregas el icono de compartir -->
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+                    
+                            <div class="p-info card-title">
+                                <a href=""> <h3>Huevos</h3></a>
+                                <div class="precio">
+                                    <span class="product-price">$13.00us</span>
+                                </div>
+                                <a class="hm-btn btn-primary  uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                        
+                       
+                <!-- BEBIDAS -->
+                <div class="tabs-content" data-aos="fade-up">
+
+                    <div class="grid-product">
+
+                        
+
+                        <div class="product-item card" id="Refrescocola">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/VLWm7mqT/Pomo-Un-litro-Cola.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-oferta">1.5 Litros</span>
+                                <!-- Aquí es donde agregas el icono de compartir -->
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Refresco de Cola</h3></a>
+                                <div class="precio">
+                                    <span>$3.00us</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                        <div class="product-item card" id="Refrescocola">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/G3kC2d52/Refresco-6-unidades.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-oferta">6 Unidades</span>
+                                <!-- Aquí es donde agregas el icono de compartir -->
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Refresco de Cola</h3></a>
+                                <div class="precio">
+                                    <span>$16.00</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                        
+                        <div class="product-item card" id="Malta">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/05JN0THR/Malta-Lata.jpg" class="card-img-top" alt="">
+                                </a>
+                               
+                                <!-- Aquí es donde agregas el icono de compartir -->
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Malta Bucanero</h3></a>
+                                <div class="precio">
+                                    <span>$1.00.00us</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                        
+
+                        
+
+                        <div class="product-item card" id="Cervezabucanero">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/XJ1w8PsZ/Cerveza-Bucanero-alamesacuba-com-8-Bebidas.jpg" class="card-img-top" alt="">
+                                </a>
+                                
+                                <!-- Aquí es donde agregas el icono de compartir -->
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Cerveza Bucanero</h3></a>
+                                <div class="precio">
+                                    <span>$1.00us</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                        <div class="product-item card">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/V6HxrnXG/cerveza-cristal.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-oferta">24 Unidades</span>
+                                <!-- Aquí es donde agregas el icono de compartir -->
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Cerveza Cristal</h3></a>
+                                <div class="precio">
+                                    <span>$22.00us</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+                       
+
+                        <div class="product-item card">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/FR1x2SCn/Zerveza-cristal-lata-1-Bebidas.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-new">1 unidad</span>
+                            </div>
+                            <a href="#" class="icon-link position-absolute top-0 end-0">
+                                <i class="bi bi-share"></i>
+                            </a>
+                            <div class="p-info">
+                               <a href=""> <h3>Cerveza Cristal</h3></a>
+                                <div class="precio">
+                                    <span>$1.00us</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+
+                        <div class="product-item card" id="Shekels">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/KjcN3RZY/cerveza-shekels-33cl-mlc-45-vol.png" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-new">1 unidad</span>
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+
+                            <div class="p-info">
+                               <a href=""> <h3>Cerveza Importada</h3></a>
+                                <div class="precio">
+                                    <span>$0.80us</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                        <div class="product-item card" id="Coprove">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/tJc9j8rg/Cerveza-Coprove.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-new">1 unidad</span>
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Cerveza Importada</h3></a>
+                                <div class="precio">
+                                    <span>$0.80us</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+                        
+
+                        <div class="product-item card" id="KolaReal">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/1zn2N3pD/7461063094796-kymxyqzr1lcqmzwb.webp" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-new">400ml</span>
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Refresco KolaReal</h3></a>
+                                <div class="precio">
+                                    <span>$1.00us</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                        <div class="product-item card" id="KolaReal">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/prFWXjWK/Imagen-de-Whats-App-2024-01-01-a-las-11-41-19-5f2fa1d8.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-new">12 Unidades</span>
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Refresco KolaReal</h3></a>
+                                <div class="precio">
+                                    <span>$11.00us</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                        <div class="product-item card" id="Chanceller">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/ZKVXBRFT/Wiskey.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-new">Wiskey</span>
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Chanceller</h3></a>
+                                <div class="precio">
+                                    <span>$6.00us</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>   
+
+                <!--  Productos Nacionales -->
+                <div class="tabs-content" data-aos="fade-up" id="Productos-Nacionales">
+
+                    <div class="grid-product" id="Productos-Nacionales">
+
+                        <div class="product-item card">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/qvM2czCf/Dulce-de-gauallaba-Confituras.png" class="card-img-top" alt="">
+                                </a>
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Dulce de guayaba</h3></a>
+                                <div class="precio">
+                                    <span>$1.00us</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                       <div class="product-item card">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/prWmrNYY/Biscocho-normal.jpg" class="card-img-top" alt="">
+                                </a>
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Biscochos</h3></a>
+                                <div class="precio">
+                                    <span>$0.50us</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                        <div class="product-item card">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="./img/galletas-marias-confituras.webp" class="card-img-top" alt="">
+                                </a>
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Galletas Maria</h3></a>
+                                <div class="precio">
+                                    <span>$2.00us</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                        <div class="product-item card">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/3x4ddFp6/Bolitas-de-pan-de-ajo.jpg" class="card-img-top" alt="">
+                                </a>
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Bolitas de pan sabor ajo</h3></a>
+                                <div class="precio">
+                                    <span>$0.50us</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                        <div class="product-item card">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/7Zwqy190/Chicharron-de-espuma-2.jpg" class="card-img-top" alt="">
+                                </a>
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Chicharron de espuma</h3></a>
+                                <div class="precio">
+                                    <span>$0.80us</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                        <div class="product-item card">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/qqxZcKKH/dulce-de-leche-con-galletas-3.jpg" class="card-img-top" alt="">
+                                </a>
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Dulce de leche</h3></a>
+                                <div class="precio">
+                                    <span>$0.80us</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                        <div class="product-item card">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/0jYht3L3/Dulce-de-guayaba-con-mano.jpg" class="card-img-top" alt="">
+                                </a>
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Dulce de Guallaba</h3></a>
+                                <div class="precio">
+                                    <span>$0.80us</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                        <div class="product-item card">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/SRGkXJNJ/Imagen_de_WhatsApp_2023-07-25_a_las_00.14.25.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-new">4 Litros</span>
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Helado de diferentes sabores</h3></a>
+                                <div class="precio">
+                                    <span>$7.00us</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                        <div class="product-item card">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/ZqP7z3fB/paquete_de_galleta_queque_o_de_chocolate.jpg" class="card-img-top" alt="">
+                                </a>
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Galletas de Chocolate</h3></a>
+                                <div class="precio">
+                                    <span>$0.40us</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                        <div class="product-item card">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/ZKg67RxG/Galletas_de_Chorizo.jpg" class="card-img-top" alt="">
+                                </a>
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Galletas sabor a Mantequilla</h3></a>
+                                <div class="precio">
+                                    <span>$0.80us</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                        <div class="product-item card">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="https://i.postimg.cc/ryjBr6N0/MentaPlus_verde.jpg" class="card-img-top" alt="">
+                                </a>
+                                <a href="#" class="icon-link position-absolute top-0 end-0" onclick="shareProduct(event)">
+                                    <i class="bi bi-share"></i> 
+                                </a>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Menta Plus</h3></a>
+                                <div class="precio">
+                                    <span>$0.60us</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Aceo personal -->
+                <div class="tabs-content" data-aos="fade-up">
+
+                    <div class="grid-product">
+
+                      <div class="product-item card">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="img/1.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-oferta">Oferta</span>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Quisque vulputate aliquam</h3></a>
+                                <div class="precio">
+                                    <span>S/ 00.00</span>
+                                    <span class="thash">S/ 00.00</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                        <div class="product-item card">
+                            <div class="p-portada">
+                                <a href="" class="add-to-modal">
+                                    <img src="img/2.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-oferta">Oferta</span>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Praesent nibh lorem, tempus quis est a</h3></a>
+                                <div class="precio">
+                                    <span>S/ 00.00</span>
+                                    <span class="thash">S/ 00.00</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                        <div class="product-item card">
+                            <div class="p-portada">
+                                <a href="">
+                                    <img src="img/7.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-oferta">Oferta</span>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Nunc sit amet justo nec ipsum dolor.</h3></a>
+                                <div class="precio">
+                                    <span>S/ 00.00</span>
+
+                                    <span class="thash">S/ 00.00</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                        <div class="product-item card">
+                            <div class="p-portada">
+                                <a href="">
+                                    <img src="img/8.jpg" class="card-img-top" alt="">
+                                </a>
+                                <span class="stin stin-oferta">Oferta</span>
+                            </div>
+
+                            <div class="p-info">
+                               <a href=""> <h3>Lorem ipsum dolor sit, amet consectetur</h3></a>
+                                <div class="precio">
+                                    <span>S/ 00.00</span>
+                                    <span class="thash">S/ 00.00</span>
+                                </div>
+                                <a href="#" class="hm-btn btn-primary uppercase add-to-cart">AGREGAR AL CARRITO</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>   
+
+
+
+         <!-- =================================
+           FOOTER
+        ================================== -->
+        <footer>
+            
+            <div class="container">
+
+                <div class="foo-row">
+                    <div class="foo-col">
+                        <h2>Suscríbete <br>a nuestro newsletter</h2>
+                        <form >
+
+                            <div class="f-input">
+                                <input type="text" name="Email" id="Email" placeholder="Ingrese su correo" required/>
+                                
+                                <button type="submit" class="hm-btn-round btn-primary control" id="submit-button"><i class="far fa-paper-plane"></i></button>
+                            </div>
+                        </form>
+
+                    </div>
+               
+
+                    <div class="foo-col">
+                        
+                        <ul>
+                            <h2 class="text-white">Otras formas de contacto</h2>
+                            <li class="text-white"><a href="./nosotros.html" class="text-white">Nosotros</a></li>
+                            <li class="text-white"><a href="./contacto.html" class="text-white">Contacto</a></li>
+                            
+                    <h4 class="text-white">También puedes contactarnos por teléfono, correo electrónico o redes sociales.</h4>
+                    <p class="text-white"><i class="bi bi-telephone"></i> +53 63658636</p>
+                    <p class="text-white"><i class="bi bi-envelope"></i> <a href="mailto:donalucia19550722@gmail.com" class="text-white">decubarincon@gmail.com</a></p>
+                    <p class="text-white"><i class="bi bi-facebook"></i> <a href="https://www.fb.com/l/6lp1kJRRR" class="text-white">Tienda en Facebook</a></p>
+                           <!--<li><a href="http://">Productos</a></li>
+                           <li><a href="http://">Campañas</a></li>
+                           
+                          
+                           <li><a href="http://">Enlace 01</a></li>
+                           <li><a href="http://">Enlace 02</a></li>
+                           <li><a href="http://">Enlace 03</a></li>-->
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+        <div class="foo-copy">
+            <div class="container">
+                <p>Rincon de Cuba © Todos los derechos reservados</p>
+            </div>
+        </div>
+  
+ 
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- Bootstrap 5.3 JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Animaciones : AOS-->
+   
+
+    <!-- Mi Script -->
+    <script src="js/modalnewaletter.js"></script>
+    <script src="js/app.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.12/push.min.js"></script>
+   
+
+
+    <script>
+
+    AOS.init({
+  duration: 1200,
+})
+
+  
+//--------------------------------------------------------
+
+
+// Añade este código a tu JavaScript
+document.getElementById('reset-button').addEventListener('click', function() {
+  localStorage.setItem('visitCount', 0);
+  alert("El contador de la página se ha reiniciado.");
+  // Actualiza la página
+  location.reload();
+});
+//----------------------------------------------------------
+
+ </script>
+
+</body>
+</html>

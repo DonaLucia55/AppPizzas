@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Ingresos 2024</title>
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    margin: 20px;
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h1 {
+    text-align: center;
+    color: #ff007f;
+    text-shadow: 3px 3px 5px #000000;
+    transition: color 0.5s ease, text-shadow 0.5s ease;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #1a1a1a;
+    border: 1px solid #444444;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s ease, border 0.5s ease, box-shadow 0.5s ease;
+}
+
+th, td {
+    border: 1px solid #444444;
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+th {
+    background-color: #333333;
+    color: #ff007f;
+    font-weight: bold;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+td[contenteditable="true"] {
+    cursor: pointer;
+}
+
+td[contenteditable="true"]:hover {
+    background-color: #ff007f;
+    color: #0d0d0d;
+    transform: scale(1.05);
+}
+
+td[contenteditable="true"]:focus {
+    outline: none;
+    background-color: #ff007f;
+    color: #0d0d0d;
+    transform: scale(1.1);
+}
+
+.total {
+    font-weight: bold;
+    background-color: #333333;
+    color: #ff007f;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.input-area {
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    border: 1px solid #444444;
+    padding: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    background-color: #333333;
+    color: #ff007f;
+    border: 1px solid #ff007f;
+}
+
+button {
+    background-color: #ff007f;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #ff4da6;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+button:active {
+    background-color: #ff007f;
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+    display: none;
+}
+
+.button-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.month-divider {
+    border-top: 2px solid #ff007f;
+    margin: 40px 0;
+}
+
+@media (max-width: 768px) {
+    body {
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    button {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2em;
+    }
+
+    table {
+        font-size: 0.8em;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
+}
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <h1>Registro de Ingresos 2024</h1>
+    <div class="button-container">
+        <label for="month-select">Selecciona un mes:</label>
+        <select id="month-select" onchange="showMonth()">
+            <option value="all">Todos</option>
+            <option value="0">Enero</option>
+            <option value="1">Febrero</option>
+            <option value="2">Marzo</option>
+            <option value="3">Abril</option>
+            <option value="4">Mayo</option>
+            <option value="5">Junio</option>
+            <option value="6">Julio</option>
+            <option value="7">Agosto</option>
+            <option value="8">Septiembre</option>
+            <option value="9">Octubre</option>
+            <option value="10">Noviembre</option>
+            <option value="11">Diciembre</option>
+        </select>
+    
+        <button onclick="generateAllPDF()">Generar PDF de Todos los Meses</button>
+         </div>
+
+    <div id="tables-container"></div>
+    <script>
+       const months = [
+    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+];
+
+const daysOfWeek = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+
+const daysInMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+function getDayOfWeek(year, month, day) {
+    const date = new Date(year, month, day);
+    return daysOfWeek[date.getDay()];
+}
+
+function createTable(monthIndex) {
+    const month = months[monthIndex];
+    const days = daysInMonth[monthIndex];
+    let table = `<div class="month-divider" id="divider-${monthIndex}"></div>
+    <div class="input-area hidden" id="input-area-${monthIndex}">
+        <textarea id="input-${monthIndex}" rows="4" cols="50" placeholder="Pega los datos aquí..."></textarea>
+        <button onclick="applyData(${monthIndex})">Aplicar Datos</button>
+    </div>
+    <div class="month-table hidden" id="table-${monthIndex}">
+    <div class="button-container">
+        <button onclick="generatePDF(${monthIndex})">Generar PDF de ${month}</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3">${month}</th>
+            </tr>
+            <tr>
+                <th>Día</th>
+                <th>Semana</th>
+                <th>Ingresos</th>
+            </tr>
+        </thead>
+        <tbody>`;
+
+    for (let i = 1; i <= days; i++) {
+        table += `<tr>
+            <td>${i}</td>
+            <td>${getDayOfWeek(2024, monthIndex, i)}</td>
+            <td contenteditable="true" oninput="calculateTotal(${monthIndex}); saveData(${monthIndex})">$0.00</td>
+        </tr>`;
+    }
+
+    table += `<tr>
+        <td colspan="2" class="total">Total:</td>
+        <td class="total" id="total-${monthIndex}">$0.00</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>`;
+
+    return table;
+}
+
+function calculateTotal(monthIndex) {
+    const rows = document.querySelectorAll(`#table-${monthIndex} tbody tr`);
+    let total = 0;
+
+    rows.forEach(row => {
+        const cell = row.cells[2];
+        if (cell && cell.textContent) {
+            const value = parseFloat(cell.textContent.replace(/[^0-9.-]+/g, ""));
+            if (!isNaN(value)) {
+                total += value;
+            }
+        }
+    });
+
+    document.getElementById(`total-${monthIndex}`).textContent = `$${total.toFixed(2)}`;
+}
+
+function applyData(monthIndex) {
+    const input = document.getElementById(`input-${monthIndex}`).value;
+    const rows = document.querySelectorAll(`#table-${monthIndex} tbody tr`);
+    const data = input.split('\n');
+
+    data.forEach((line, index) => {
+        if (index < rows.length - 1) {
+            const cells = rows[index].cells;
+            const value = line.trim();
+            if (value) {
+                cells[2].textContent = value;
+            }
+        }
+    });
+
+    calculateTotal(monthIndex);
+    saveData(monthIndex);
+}
+
+function showMonth() {
+    const selectedMonth = document.getElementById('month-select').value;
+    const tables = document.querySelectorAll('.month-table');
+    const inputAreas = document.querySelectorAll('.input-area');
+    const dividers = document.querySelectorAll('.month-divider');
+    tables.forEach((table, index) => {
+        if (selectedMonth === 'all' || selectedMonth == index) {
+            table.classList.remove('hidden');
+            inputAreas[index].classList.remove('hidden');
+            dividers[index].classList.remove('hidden');
+        } else {
+            table.classList.add('hidden');
+            inputAreas[index].classList.add('hidden');
+            dividers[index].classList.add('hidden');
+        }
+    });
+}
+
+function saveData(monthIndex) {
+    const rows = document.querySelectorAll(`#table-${monthIndex} tbody tr`);
+    const data = [];
+
+    rows.forEach(row => {
+        const cell = row.cells[2];
+        if (cell) {
+            data.push(cell.textContent);
+        }
+    });
+
+    localStorage.setItem(`month-${monthIndex}`, JSON.stringify(data));
+}
+
+function loadData() {
+    months.forEach((month, index) => {
+        const data = JSON.parse(localStorage.getItem(`month-${index}`));
+        if (data) {
+            const rows = document.querySelectorAll(`#table-${index} tbody tr`);
+            data.forEach((value, i) => {
+                if (i < rows.length - 1) {
+                    rows[i].cells[2].textContent = value;
+                }
+            });
+            calculateTotal(index);
+        }
+    });
+}
+
+function generatePDF(monthIndex) {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    addTableToPDF(doc, monthIndex);
+    doc.save(`registro_ingresos_${months[monthIndex]}_2024.pdf`);
+}
+
+function generateAllPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    months.forEach((month, index) => {
+        addTableToPDF(doc, index);
+        if (index < months.length - 1) {
+            doc.addPage();
+        }
+    });
+    doc.save('registro_ingresos_2024.pdf');
+}
+
+function addTableToPDF(doc, monthIndex) {
+    const table = document.getElementById(`table-${monthIndex}`).querySelector('table');
+    doc.text(months[monthIndex], 10, 10);
+    doc.autoTable({ html: table, startY: 20 });
+}
+
+const container = document.getElementById('tables-container');
+months.forEach((month, index) => {
+    container.innerHTML += createTable(index);
+});
+
+loadData();
+showMonth();
+
+    </script>
+</body>
+</html>
