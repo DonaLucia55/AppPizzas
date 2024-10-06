@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combos de Alimentos</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1, h3 {
+            color: #00e676;
+        }
+        .combo {
+            border: 1px solid #00e676;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #1e1e1e;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            background-color: #2c2c2c;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .cart-item-quantity input {
+            width: 60px;
+            background-color: #333;
+            color: #ffffff;
+            border: 1px solid #00e676;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .btn-primary {
+            background-color: #00e676;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #00c853;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .combo {
+                padding: 10px;
+            }
+            .btn-primary {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="max-width: 400px; margin: 0 auto;">
+        <img src="https://i.postimg.cc/cHr4Gmr3/Logo-Do-a-Lucia-rojo.png" alt="Logo Doña Lucia" style="width: 150px; display: block; margin: 20px auto; border: 2px solid #ff4500; border-radius: 50%; box-shadow: 0 0 10px #ff4500;">
+        <p style="font-family: 'Georgia', serif; color: #ff4500; text-align: center; font-size: 1.2em;"><strong>Doña Lucia</strong></p>
+        <p style="font-family: 'Georgia', serif; color: #ffd700; background-color: #333333; padding: 10px; border-radius: 10px; text-align: center; box-shadow: 0 0 10px #ffd700;">🌟 ¡Seleccione la cantidad deseada en el producto deseado! 🌟</p>
+        <p style="font-family: 'Georgia', serif; color: #ffffff; background-color: #444444; padding: 10px; border-radius: 10px; text-align: center; box-shadow: 0 0 10px #ffffff;"> Luego presione en el botón de enviar mediante WhatsApp situado al final...</p>
+    </div>
+    
+        
+    <h2>Total: $<span id="total-price">0.00</span>us</h2>
+    
+        <div class="combo">
+            <h3>🍚 Combo Familiar Básico:</h3>
+            <div class="cart-item">
+                <span class="cart-item-name">Arroz(5Libras) $5.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Frijoles(5Libras) $8.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Aceite(1Litro) $3.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Paquetes de pollo(10Libras) $14.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Paquetes de pollo(5Libras) $7.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Carton de huevos $15.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Jabon de baño $1.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Detergente líquido $1.50us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+        </div>
+    
+        <div class="combo">
+            <h3>🧀 Combo Gourmet:</h3>
+            <div class="cart-item">
+                <span class="cart-item-name">Queso blanco(10Libras) $18.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Paquetes de café Importao $4.50us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Latas de carne $3.00</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Espaguetis y coditos $1.50us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Sopas instantánea $1.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Picadillos mixtos condimentados $3.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Salchichas $2.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+        </div>
+    
+        <div class="combo">
+            <h3>🍬 Combo Dulce y Salado:</h3>
+            <div class="cart-item">
+                <span class="cart-item-name">Azúcar (5Libras) $8.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div style="display: none;" class="cart-item">
+                <span class="cart-item-name">Gelatinas $1.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Confituras de todo tipo(Consultar en el chat)</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Chocolate en polvo(0.5Libras) $2.00us </span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Latas de leche condensada $2.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Nutella $5.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+        </div>
+    
+        <div class="combo">
+            <h3>🥤 Combo Bebidas y Snacks:</h3>
+            <div class="cart-item">
+                <span class="cart-item-name">Paquetes de refresco $0.20us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Pomos de refresco de gas $2.00us </span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Latas de refresco $0.80us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Maltas $1.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Cajas de jugo 1Litro $2.00us </span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Cajas de jugo 250ml $0.60us </span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Yogurt de potesito $0.80us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">whisky $5.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Vino $1.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Ron(Pepino de un litro Arecha) $4.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Cerveza Cristal $1.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Cerveza Importada $1.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+        </div>
+    
+        <div class="combo">
+            <h3>🍳 Combo Cocina Completa:</h3>
+            <div class="cart-item">
+                <span class="cart-item-name">Pomos de puré y pasta de puré(Consultar en el chat)</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Pomos de mayonesa $3.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div style="display: none;" class="cart-item">
+                <span class="cart-item-name">Pomos de vinagre $1.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div style="display: none;" class="cart-item">
+                <span class="cart-item-name">Pomos de extracto puro de limón $1.50us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Sazones $0.20us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div style="display: none;" class="cart-item">
+                <span class="cart-item-name">Mantequilla $1.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+        </div>
+    
+        <div class="combo">
+            <h3>🍗 Combo Proteínas:</h3>
+            <div class="cart-item">
+                <span class="cart-item-name">Paquetes de pollo 10libras $14.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Picadillo $3.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Jamonada 6L $12.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+        </div>
+    
+        <div class="combo">
+            <h3>🍏 Combo Frutas y Lácteos:</h3>
+            <div style="display: none;" class="cart-item">
+                <span class="cart-item-name">Manzanas</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Leche en polvo $6.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div style="display: none;" class="cart-item">
+                <span class="cart-item-name">Helado 4 Litros $8.00us</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+        </div>
+    
+        <div style="display: none;" class="combo">
+            <h3>🧴 Combo Acero personal:</h3>
+            <div class="cart-item">
+                <span class="cart-item-name">Desodorantes de pasta y de varios tipos</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Shampoo</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div class="cart-item">
+                <span class="cart-item-name">Acondicionador</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+            <div style="display: none;" class="cart-item">
+                <span class="cart-item-name">Crema para la piel</span>
+                <span class="cart-item-quantity">Cantidad: <input type="number" value="0" min="0"></span>
+            </div>
+        </div>
+    
+        <h2 style="display: none;">Información del Envío</h2>
+        <label style="display: none;" for="name">Tu Nombre:</label>
+        <input style="display: none;" type="text" id="name"><br>
+    
+        <button class="btn-primary" type="submit">Enviar por WhatsApp</button>
+    
+
+    <script>
+       const calculateTotal = () => {
+    const cartItems = document.querySelectorAll('.cart-item');
+    let total = 0;
+    let totalQuantity = 0;
+
+    cartItems.forEach(item => {
+        const quantity = parseInt(item.querySelector('input').value.trim(), 10);
+        const name = item.querySelector('.cart-item-name').textContent.trim();
+        const priceMatch = name.match(/\$(\d+(\.\d{1,2})?)us/);
+        const price = priceMatch ? parseFloat(priceMatch[1]) : 0;
+        if (quantity > 0) {
+            total += quantity * price;
+            totalQuantity += quantity;
+        }
+    });
+
+    document.getElementById('total-price').textContent = total.toFixed(2);
+    document.getElementById('total-quantity').textContent = totalQuantity;
+};
+
+const sendToWhatsApp = () => {
+    const cartItems = document.querySelectorAll('.cart-item');
+    let cartProducts = '';
+    let total = 0;
+
+    cartItems.forEach(item => {
+        const quantity = parseInt(item.querySelector('input').value.trim(), 10);
+        const name = item.querySelector('.cart-item-name').textContent.trim();
+        const priceMatch = name.match(/\$(\d+(\.\d{1,2})?)us/);
+        const price = priceMatch ? parseFloat(priceMatch[1]) : 0;
+        if (quantity > 0) {
+            cartProducts += `${quantity} ${name}\n`;
+            total += quantity * price;
+        }
+    });
+
+    if (cartProducts === '') {
+        alert('No hay artículos en el carrito.');
+        return;
+    }
+
+    let message = `Hola, he realizado un pedido de:\n${cartProducts}Total: $${total.toFixed(2)}us\nEspero su respuesta... saludos.\n`;
+    const whatsappLink = `https://api.whatsapp.com/send?phone=55189657&text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappLink, '_blank').catch(error => {
+        console.error('Error al abrir WhatsApp:', error);
+    });
+};
+
+const sendButton = document.querySelector('.btn-primary[type="submit"]');
+sendButton.addEventListener('click', sendToWhatsApp);
+
+const quantityInputs = document.querySelectorAll('.cart-item input');
+quantityInputs.forEach(input => {
+    input.addEventListener('input', calculateTotal);
+    input.addEventListener('focus', (event) => {
+        event.target.select();
+    });
+});
+    </script>
+</body>
+</html>
