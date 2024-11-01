@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +13,6 @@
             font-family: 'Arial', sans-serif;
             background-color: #f7f7f7;
         }
-
         .header-content {
             display: flex;
             justify-content: center;
@@ -25,7 +23,6 @@
             background-color: #ff4081;
             color: white;
         }
-
         .header-content img {
             max-width: 100%;
             height: auto;
@@ -33,12 +30,10 @@
             border-radius: 15px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
-
         .header-actions p {
             font-size: 1.2rem;
             margin-bottom: 1rem;
         }
-
         .btn {
             background-color: #fff;
             color: #ff4081;
@@ -49,13 +44,11 @@
             text-decoration: none;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
         .btn:hover {
             background-color: #ff4081;
             color: #fff;
             transition: all 0.3s ease;
         }
-
         .combo {
             background-color: white;
             margin: 1rem;
@@ -64,28 +57,23 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
-
         .combo:hover {
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         }
-
         .combo h2 {
             color: #ff4081;
             margin-bottom: 1rem;
         }
-
         footer {
             text-align: center;
             padding: 2rem;
             background-color: #ff4081;
             color: white;
         }
-
         footer p {
             margin: 0;
             font-size: 1.2rem;
         }
-
         footer a {
             color: #fff;
             text-decoration: none;
@@ -93,24 +81,156 @@
             display: inline-block;
             transition: color 0.3s ease;
         }
-
         footer a:hover {
             color: #ffc107;
         }
+    
+
+   
+        body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #ff4081 30%, #ffc107 90%);
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #fff;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.5s;
+    color: #fff;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffc107;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    animation: slideIn 0.5s;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #ff4081;
+}
+
+.modal-header .close {
+    color: #ff4081;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-header .close:hover,
+.modal-header .close:focus {
+    color: #fff;
+}
+
+.modal-body {
+    padding: 2rem;
+    text-align: center;
+    animation: fadeIn 0.7s;
+}
+
+.modal-body p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.modal-footer {
+    padding: 1rem;
+    text-align: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    animation: slideIn 0.5s;
+}
+
+.close-btn {
+    background-color: #ff4081;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background-color: #fff;
+    color: #ff4081;
+}
+
+/* Botón de WhatsApp */
+.whatsapp-btn {
+    background-color: #25D366;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+    color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
     </style>
 </head>
-
 <body>
     <header>
         <div class="header-content">
             <img src="https://i.postimg.cc/26F16c26/Imagen-de-Whats-App-2024-10-06-a-las-14-43-10-c3ff09c7.jpg" alt="Combos de Alimentos para tus Seres Queridos en Cuba">
             <div class="header-actions">
                 <p><i class="fas fa-gift"></i> Ofertas Especiales de Combos de Alimentos para tus Seres Queridos en Cuba. ¿Quieres enviar un regalo especial a tus familiares en Cuba? ¡Tenemos la solución perfecta para ti!</p>
-                <a href="https://donalucia55.github.io/AppPizzas/WEB/ComboLista/ComboLista.html" target="_blank" class="btn"><i class="fas fa-shopping-cart"></i> Ver Precios</a>
+                <a href="https://donalucia55.github.io/AppPizzas/WEB/ComboLista/ComboLista.html" target="_blank" class="btn"><i class="fas fa-shopping-cart"></i> Ver Productos</a>
             </div>
         </div>
     </header>
-
     <section id="combos" class="container">
         <div class="row">
             <div class="combo col-md-6">
@@ -121,13 +241,11 @@
                     <li>Aceite</li>
                     <li>Paquetes de pollo</li>
                     <li>Cartones de huevos</li>
-                    
                 </ul>
             </div>
             <div class="combo col-md-6">
                 <h2><i class="fas fa-utensils"></i>Gourmet</h2>
                 <ul>
-                    
                     <li>Paquetes de café de varios tipos y precios</li>
                     <li>Latas de carne</li>
                     <li>Latas de Sardina</li>
@@ -166,7 +284,6 @@
                     <li>Vino</li>
                     <li>Ron (Varios)</li>
                     <li>Cerveza (Varios)</li>
-                    
                 </ul>
             </div>
         </div>
@@ -174,7 +291,7 @@
             <div class="combo col-md-6">
                 <h2><i class="fas fa-drumstick-bite"></i>Proteínas</h2>
                 <ul>
-                    <li>Carne de cerdo(en rama, limpia, etc...)</li>
+                    <li>Carne de cerdo (en rama, limpia, etc...)</li>
                     <li>Paquetes de pollo</li>
                     <li>Picadillo</li>
                     <li>Jamonada</li>
@@ -183,7 +300,6 @@
             <div class="combo col-md-6">
                 <h2><i class="fas fa-apple-alt"></i>Lácteos</h2>
                 <ul>
-                   
                     <li>Leche en polvo</li>
                     <li>Helado 4 Litros</li>
                     <li>Quesos de Varios Tipos</li>
@@ -209,14 +325,69 @@
             </div>
         </div>
     </section>
-
+    
     <footer>
-        <p>¡No esperes más! ⏳ Envía hoy mismo un combo personalizado y haz feliz a tus familiares en Cuba. Para más información y para realizar tu pedido, contácteme al 55189657 y paga fácilmente mediante Zelle.</p>
-        <a href="https://donalucia55.github.io/AppPizzas/WEB/ComboLista/ComboLista.html" target="_blank" class="btn"><i class="fas fa-shopping-cart"></i> Ver Precios de Productos Disponibles</a>
+        <p>¡No esperes más! ⏳ Envía hoy mismo un combo personalizado y haz feliz a tus familiares en Cuba. Para más información y para realizar tu pedido, contáctame al +53 55189657 y paga fácilmente mediante Zelle.</p>
+        <a href="https://donalucia55.github.io/AppPizzas/WEB/ComboLista/ComboLista.html" target="_blank">Ver lista de productos disponibles</a>
     </footer>
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
-</body>
+   
 
+    <!-- Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>¡Contáctanos Ahora!</h2>
+            </div>
+            <div class="modal-body">
+                <p>¿Tienes alguna pregunta o quieres hacer un pedido? ¡Estamos aquí para ayudarte!</p>
+                <a href="https://wa.me/5355189657" target="_blank" class="whatsapp-btn">WhatsApp: +53 55189657</a>
+                <p>Responde a tus necesidades con rapidez y eficiencia. ¡Contáctanos ya y descubre nuestras ofertas especiales!</p>
+            </div>
+            <div class="modal-footer">
+                <button class="close-btn">Cerrar</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+     // Obtener el modal
+var modal = document.getElementById("contactModal");
+
+// Obtener el botón que abre el modal
+var btn = document.getElementById("contactBtn");
+
+// Obtener el elemento <span> que cierra el modal
+var span = document.getElementsByClassName("close")[0];
+
+// Obtener el botón de cierre en el pie del modal
+var closeButton = document.getElementsByClassName("close-btn")[0];
+
+// Abrir el modal al cargar la página
+window.onload = function() {
+    modal.style.display = "block";
+}
+
+// Cerrar el modal cuando el usuario haga clic en <span> (x)
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Cerrar el modal cuando el usuario haga clic en el botón de cierre
+closeButton.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Cerrar el modal cuando el usuario haga clic fuera del modal
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+    </script>
+</body>
 </html>
