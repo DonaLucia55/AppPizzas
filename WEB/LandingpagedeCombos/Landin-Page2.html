@@ -10,8 +10,7 @@
     <meta property="og:image" content="https://i.postimg.cc/tTVwybZ9/OIG1-Recuperado.jpg">
     <meta property="og:image:alt" content="Combos de Alimentos para tus Seres Queridos en Cuba">
     <style>
-        /* General Styles */
-body {
+        body {
             font-family: 'Arial', sans-serif;
             background-color: #f7f7f7;
         }
@@ -22,7 +21,7 @@ body {
             flex-direction: column;
             text-align: center;
             padding: 2rem;
-            background-color: #996859;
+            background-color: #9a695a;
             color: white;
         }
         .header-content img {
@@ -38,8 +37,8 @@ body {
         }
         .btn {
             background-color: #fff;
-            color: #932321;
-            border: 2px solid #932321;
+            color: #9a695a;
+            border: 2px solid #9a695a;
             border-radius: 25px;
             padding: 0.5rem 2rem;
             text-transform: uppercase;
@@ -47,81 +46,58 @@ body {
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .btn:hover {
-            background-color: #ce5250;
+            background-color: #bb9185;
             color: #fff;
             transition: all 0.3s ease;
         }
+        .combo {
+            background-color: white;
+            margin: 1rem;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .combo:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        .combo h2 {
+            color: #834a39;
+            margin-bottom: 1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #9a695a;
+            color: white;
+        }
+        footer p {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin-top: 1rem;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #ffc107;
+        }
+    
 
-/* Combos Section */
-#combos {
-    padding: 60px 0;
+   
+        body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
 }
 
-.combo {
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    padding: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
 }
 
-.combo:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.combo h2 {
-    color: #007bff;
-    margin-bottom: 20px;
-}
-
-.combo ul {
-    list-style: none;
-    padding: 0;
-}
-
-.combo ul li {
-    background: #f8f9fa;
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 10px;
-}
-
-/* Footer */
-footer {
-    background-color: #996859;
-    color: #fff;
-    text-align: center;
-    padding: 40px 20px;
-    border-top: 5px solid #7a4d3a;
-    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
-    font-size: 1.2em;
-    position: relative;
-}
-
-footer p {
-    margin: 0 0 20px;
-    line-height: 1.6;
-}
-
-footer a {
-    color: #ffd700;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #7a4d3a;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-footer a:hover {
-    background-color: #5e3a2b;
-    transform: scale(1.05);
-}
-
-
-/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -131,117 +107,117 @@ footer a:hover {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
 }
 
 .modal-content {
-    background-color: #fff;
-    margin: 15% auto;
+    background: linear-gradient(135deg, #9a695a 30%, #ffc107 90%);
+    margin: 10% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid #fff;
     width: 80%;
     max-width: 500px;
     border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     animation: fadeIn 0.5s;
-}
-
-.modal-header, .modal-footer {
-    padding: 10px;
-    background-color: #007bff;
     color: #fff;
-    border-radius: 15px 15px 0 0;
 }
 
-.modal-header .close {
-    color: #fff;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.modal-header .close:hover,
-.modal-header .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-body {
-    padding: 20px;
-}
-
-.whatsapp-btn {
-    background-color: #25d366;
-    color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 50px;
-    display: inline-block;
-    margin-top: 10px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.whatsapp-btn:hover {
-    background-color: #1ebc57;
-    transform: scale(1.05);
-}
-
-.close-btn {
-    background-color: #007bff;
-    color: #fff;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.close-btn:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
-/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-    .header-content {
-        padding: 20px;
-    }
-
-    .combo {
-        margin: 10px;
-    }
-
-    .modal-content {
-        width: 90%;
-    }
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffc107;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    animation: slideIn 0.5s;
 }
 
-@media (max-width: 480px) {
-    header {
-        padding: 60px 0;
-    }
+@keyframes slideIn {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
 
-    .header-actions p {
-        font-size: 1.2em;
-    }
+.modal-header h2 {
+    margin: 0;
+    color: #532719;
+}
 
-    .header-actions .btn {
-        padding: 10px 20px;
-    }
+.modal-header .close {
+    color: #47251b;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
 
-    .combo h2 {
-        font-size: 1.5em;
-    }
+.modal-header .close:hover,
+.modal-header .close:focus {
+    color: #fff;
+}
 
-    .combo ul li {
-        font-size: 0.9em;
-    }
+.modal-body {
+    padding: 2rem;
+    text-align: center;
+    animation: fadeIn 0.7s;
+}
+
+.modal-body p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.modal-footer {
+    padding: 1rem;
+    text-align: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    animation: slideIn 0.5s;
+}
+
+.close-btn {
+    background-color: #9a695a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background-color: #fff;
+    color: #ff4081;
+}
+
+/* Botón de WhatsApp */
+.whatsapp-btn {
+    background-color: #25D366;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+    color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
     </style>
