@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMB8OS DOÑA LUCIA</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="https://i.postimg.cc/cHr4Gmr3/Logo-Do-a-Lucia-rojo.png" type="image/x-icon">
+    <meta property="og:image" content="https://i.postimg.cc/tTVwybZ9/OIG1-Recuperado.jpg">
+    <meta property="og:image:alt" content="Combos de Alimentos para tus Seres Queridos en Cuba">
+    <style>
+        /* General Styles */
+body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+        }
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 2rem;
+            background-color: #996859;
+            color: white;
+        }
+        .header-content img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .header-actions p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            background-color: #fff;
+            color: #932321;
+            border: 2px solid #932321;
+            border-radius: 25px;
+            padding: 0.5rem 2rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn:hover {
+            background-color: #ce5250;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+/* Combos Section */
+#combos {
+    padding: 60px 0;
+}
+
+.combo {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.combo:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.combo h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.combo ul {
+    list-style: none;
+    padding: 0;
+}
+
+.combo ul li {
+    background: #f8f9fa;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #996859;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 5px solid #7a4d3a;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.2em;
+    position: relative;
+}
+
+footer p {
+    margin: 0 0 20px;
+    line-height: 1.6;
+}
+
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #7a4d3a;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+footer a:hover {
+    background-color: #5e3a2b;
+    transform: scale(1.05);
+}
+
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 15px;
+    animation: fadeIn 0.5s;
+}
+
+.modal-header, .modal-footer {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-header .close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal-header .close:hover,
+.modal-header .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.whatsapp-btn {
+    background-color: #25d366;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #1ebc57;
+    transform: scale(1.05);
+}
+
+.close-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.close-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .header-content {
+        padding: 20px;
+    }
+
+    .combo {
+        margin: 10px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 60px 0;
+    }
+
+    .header-actions p {
+        font-size: 1.2em;
+    }
+
+    .header-actions .btn {
+        padding: 10px 20px;
+    }
+
+    .combo h2 {
+        font-size: 1.5em;
+    }
+
+    .combo ul li {
+        font-size: 0.9em;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="https://i.postimg.cc/v8zpTwdQ/banner1.jpg" alt="Combos de Alimentos para tus Seres Queridos en Cuba">
+            <div class="header-actions">
+                <p><i class="fas fa-gift"></i> Ofertas Especiales de Combos de Alimentos para tus Seres Queridos en Cuba. ¿Quieres enviar un regalo especial a tus familiares en Cuba? ¡Tenemos la solución perfecta para ti!</p>
+                <a href="https://donalucia55.github.io/AppPizzas/WEB/ComboLista/ComboLista.html" target="_blank" class="btn"><i class="fas fa-shopping-cart"></i> Ver Productos</a>
+            </div>
+        </div>
+    </header>
+    <section id="combos" class="container">
+        <div class="row">
+            <div class="combo col-md-6">
+                <h2><i class="fas fa-box-open"></i>Familiar Básico</h2>
+                <ul>
+                    <li>Arroz</li>
+                    <li>Frijoles</li>
+                    <li>Aceite</li>
+                    <li>Paquetes de pollo</li>
+                    <li>Cartones de huevos</li>
+                </ul>
+            </div>
+            <div class="combo col-md-6">
+                <h2><i class="fas fa-utensils"></i>Gourmet</h2>
+                <ul>
+                    <li>Paquetes de café de varios tipos y precios</li>
+                    <li>Latas de carne</li>
+                    <li>Latas de Sardina</li>
+                    <li>Espaguetis y coditos</li>
+                    <li>Sopas instantáneas</li>
+                    <li>Picadillos mixtos condimentados</li>
+                    <li>Salchichas</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="combo col-md-6">
+                <h2><i class="fas fa-candy-cane"></i>Dulce y Salado</h2>
+                <ul>
+                    <li>Azúcar</li>
+                    <li>Gelatinas</li>
+                    <li>Confituras de todo tipo</li>
+                    <li>Chocolate cocoa puro en polvo</li>
+                    <li>Latas de leche condensada</li>
+                    <li>Nutella</li>
+                    <li>Dulces de mani</li>
+                    <li>Dulces de Leche</li>
+                    <li>Dulce de Ajonjoli</li>
+                </ul>
+            </div>
+            <div class="combo col-md-6">
+                <h2><i class="fas fa-wine-glass-alt"></i>Bebidas y Snacks</h2>
+                <ul>
+                    <li>Paquetes de refresco Inst.</li>
+                    <li>Pomos de refresco de gas</li>
+                    <li>Latas de refresco de gas</li>
+                    <li>Maltas</li>
+                    <li>Cajas de jugo de varios sabores</li>
+                    <li>Yogurt de varios sabores</li>
+                    <li>Whisky (Varios)</li>
+                    <li>Vino</li>
+                    <li>Ron (Varios)</li>
+                    <li>Cerveza (Varios)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="combo col-md-6">
+                <h2><i class="fas fa-drumstick-bite"></i>Proteínas</h2>
+                <ul>
+                    <li>Carne de cerdo (en rama, limpia, etc...)</li>
+                    <li>Paquetes de pollo</li>
+                    <li>Picadillo</li>
+                    <li>Jamonada</li>
+                </ul>
+            </div>
+            <div class="combo col-md-6">
+                <h2><i class="fas fa-apple-alt"></i>Lácteos</h2>
+                <ul>
+                    <li>Leche en polvo</li>
+                    <li>Helado 4 Litros</li>
+                    <li>Quesos de Varios Tipos</li>
+                    <li>Mantequilla en Barra</li>
+                    <li>Mantequilla de Mani</li>
+                    <li>Nutella</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="combo col-md-6">
+                <h2><i class="fas fa-shower"></i>Aseo Personal</h2>
+                <ul>
+                    <li>Desodorantes de pasta y de varios tipos</li>
+                    <li>Shampoo</li>
+                    <li>Acondicionador</li>
+                    <li>Crema para peinar</li>
+                    <li>Crema para Reparar el cabello</li>
+                    <li>Crema para la piel</li>
+                    <li>Jabones</li>
+                    <li>Detergente líquido y en polvo</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>¡No esperes más! ⏳ Envía hoy mismo un combo personalizado y haz feliz a tus familiares en Cuba. Para más información y para realizar tu pedido, contáctame al +53 55189657 y paga fácilmente mediante Zelle.</p>
+        <a href="https://donalucia55.github.io/AppPizzas/WEB/ComboLista/ComboLista.html" target="_blank">Ver lista de productos disponibles</a>
+    </footer>
+
+   
+
+    <!-- Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>¡Contáctanos Ahora!</h2>
+            </div>
+            <div class="modal-body">
+                <p>¿Tienes alguna pregunta o quieres hacer un pedido? ¡Estamos aquí para ayudarte!</p>
+                <a href="https://wa.me/5355189657" target="_blank" class="whatsapp-btn">WhatsApp: +53 55189657</a>
+                <p>Responde a tus necesidades con rapidez y eficiencia. ¡Contáctanos ya y descubre nuestras ofertas especiales!</p>
+            </div>
+            <div class="modal-footer">
+                <button class="close-btn">Cerrar</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+     // Obtener el modal
+var modal = document.getElementById("contactModal");
+
+// Obtener el botón que abre el modal
+var btn = document.getElementById("contactBtn");
+
+// Obtener el elemento <span> que cierra el modal
+var span = document.getElementsByClassName("close")[0];
+
+// Obtener el botón de cierre en el pie del modal
+var closeButton = document.getElementsByClassName("close-btn")[0];
+
+// Abrir el modal al cargar la página
+window.onload = function() {
+    modal.style.display = "block";
+}
+
+// Cerrar el modal cuando el usuario haga clic en <span> (x)
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Cerrar el modal cuando el usuario haga clic en el botón de cierre
+closeButton.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Cerrar el modal cuando el usuario haga clic fuera del modal
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+    </script>
+</body>
+</html>
